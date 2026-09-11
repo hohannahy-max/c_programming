@@ -1,14 +1,14 @@
 #include <iostream>
-#include <random>
+#include <cstdlib>
 using namespace std;
 
 
 
 
 int main(){
-  int input;
-  cin >> input >> rand();
-  cout << input;
+  int randomNum = rand();
+  cin >> randomNum;
+  cout << randomNum << endl;
 
 
   return 0;
