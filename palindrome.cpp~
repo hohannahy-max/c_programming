@@ -1,0 +1,16 @@
+#include <iostream>
+#include <cstring>
+
+int main(){
+
+
+
+
+  if (palindrome == true){
+    char str[80];
+    cin >> str;
+    cout << "Palindrome";
+  }
+
+  return 0;
+}
