@@ -15,7 +15,7 @@ int main(){
     /*
   //Get rid of spaces and punctuation and make same case
   for (int i =0, len = strlen(str); i <len; i++){
-
+    tolower(str[i])
   put in each character until  
     if (isalpha(str[i]) == 0)
       {
