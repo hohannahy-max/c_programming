@@ -10,32 +10,42 @@ int main(){
   char str2[81]; //array to write reverse in
   cin.get(str,81);
   int j;
+#include <iostream>
+#include <cstring>
+#include <cctype>
+using namespace std;
+
+
+
+int main(){
+  char str[81]; // array to write in
+  char clean[81]; //array to write reverse in
+  char reverse[81];
+  cin.get(str,81);
+  
 
   
   //Get rid of spaces and punctuation and make same case
-  for (int i =0,str[i] =! '/0'; i++){
-    tolower(str[i])
-  put in each character until  
-    if (isalnum(str[i]) 
+  int len = 0;
+  for (int i =0;str[i] != '\0'; i++){
+ //put in each character until  
+    if (isalnum(str[i]))
       {
-	str.erase(i--,1);
-	len = strlen(len);
+      clean[len] =  tolower(str[i]);
+      len++;
 
       }
-     if (isspace(str[i]) == 1){
 
 
      }
+clean[len] = '\0';
 
+for (int i = 0; i < len; i++){
+reverse[i] = clean[len - 1 -i];
+}
+revers[len] = '\0';
 
-  }
-
-
-   strcpy(str2, str);
-  */
-  cout << str << endl;
-
-  if (strcmp(str, str2) == 0){
+  if (strcmp(clean, reverse) == 0){
     cout << "Palindrome" << endl;
   } else {
     cout << "Not a palindrome" << endl;
