@@ -16,7 +16,6 @@ int main(){
   //Get rid of spaces and punctuation and make same case
   int len = 0;
   for (int i =0;str[i] != '\0'; i++){
- //put in each character until  
     if (isalnum(str[i]))
       {
       clean[len] =  tolower(str[i]);
