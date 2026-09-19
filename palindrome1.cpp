@@ -7,8 +7,8 @@ using namespace std;
 
 int main(){
   char str[81]; // array to write in
-  char clean[81]; //array to write reverse in
-  char reverse[81];
+  char clean[81]; //array to write string w/o punctuation and same case.
+  char reverse[81]; //array to write reverse in
   cin.get(str,81);
   
 
@@ -27,7 +27,8 @@ int main(){
 
      }
 clean[len] = '\0';
-
+  
+// reverse
 for (int i = 0; i < len; i++){
 reverse[i] = clean[len - 1 -i];
 }
