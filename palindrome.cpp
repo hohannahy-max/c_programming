@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <cstring>
 #include <cctype>
@@ -7,20 +8,8 @@ using namespace std;
 
 int main(){
   char str[81]; // array to write in
-  char str2[81]; //array to write reverse in
-  cin.get(str,81);
-  int j;
-#include <iostream>
-#include <cstring>
-#include <cctype>
-using namespace std;
-
-
-
-int main(){
-  char str[81]; // array to write in
-  char clean[81]; //array to write reverse in
-  char reverse[81];
+  char clean[81]; //array to write clean string in
+  char reverse[81];// reversed string
   cin.get(str,81);
   
 
@@ -39,12 +28,13 @@ int main(){
 
      }
 clean[len] = '\0';
-
+//make reverse
 for (int i = 0; i < len; i++){
 reverse[i] = clean[len - 1 -i];
 }
 revers[len] = '\0';
 
+//print out if palindrome or not
   if (strcmp(clean, reverse) == 0){
     cout << "Palindrome" << endl;
   } else {
