@@ -8,7 +8,7 @@ Project: TicTacToe
 //assign the alphabets and numbers to each square
 
 include <iostream>;
-use namespace std;
+using namespace std;
 
 
 int main(){
@@ -27,7 +27,7 @@ int main(){
 
 
 
-float reset(){
+void reset(){
 
   for (i=0, i < 3; i++){
   char board[13];
