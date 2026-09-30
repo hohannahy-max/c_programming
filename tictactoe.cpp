@@ -22,7 +22,7 @@ int main(){
     current_player = false;
 
   }
-  else{
+  {
     current_player = true;
 
   }
@@ -39,11 +39,13 @@ int main(){
   //initalize playyer and score
   int player1_win = 0;
   int player2_win = 0;
-  return 0;
-  if (move == 1a){
+
+  if (move == 1a)
+  {
 
   }
-  elif (move == 1b){
+  elif (move == 1b)
+  {
 
 
   }
@@ -58,22 +60,32 @@ void reset(){
   char board[4][4];
   char current_player = 'X'; //player 1
 
-  
 
+
+
+}
+
+float check_move()
+{
 
 
 
 }
 
 
-float check_win(){
+float check_win()
+{
 
   char winner = current_player ;
-  if(winner = 'X'){
+  if(winner = 'X')
+  {
     player1_win++;
+    reset();
   }
-  else{
+  else
+  {
     player2_win++;
+    reset();
   }
 
   return;
