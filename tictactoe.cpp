@@ -5,7 +5,6 @@ Project: TicTacToe
  */
 
 
-//assign the alphabets and numbers to each square
 
 #include <iostream>
 using namespace std;
@@ -154,6 +153,8 @@ int main(){
 
     add_move(row,col);
     draw_board();
+
+    
     char symbol;
     if (current_player ==  true){
       symbol = 'X';
@@ -168,14 +169,14 @@ int main(){
       
       if (current_player){
 	player1_win++;
-	cout << "player one wins" << endl;
+	cout << "player one wins" << endl << endl;
       }
       else
 	{
 	player2_win++;
-	cout << "player two wins"<< endl;
+	cout << "player two wins"<< endl << endl;
       }
-      cout << "Player one: " << player1_win << " Player two: " << player2_win<< endl;
+      cout << "Player one: " << player1_win << " Player two: " << player2_win<< endl << endl;
     reset();
     draw_board();
     }
