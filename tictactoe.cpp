@@ -165,33 +165,33 @@ int main(){
 
     
     if (check_win(symbol)){
+      
       if (current_player){
 	player1_win++;
 	cout << "player one wins" << endl;
-      }else{
-
+      }
+      else
+	{
 	player2_win++;
 	cout << "player two wins"<< endl;
-
       }
       cout << "Player one: " << player1_win << " Player two: " << player2_win<< endl;
     reset();
     draw_board();
     }
-    else if (board_full()){
+    else if (board_full())
+      {
       cout << "it's a tie!" << endl << endl;
       reset();
       draw_board();
-
     }
-    else{
-      current_player =! current_player;
-
+    
+    else
+      {
+	current_player =! current_player; //change player
     }
  
 }
-
-
   return 0;
 }
 
