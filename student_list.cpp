@@ -9,6 +9,8 @@ Your program should have a vector of struct pointers passed by reference, or a v
  */
 
 #include <iostream>
+#include <vector>
+
 using namespace std;
 
 struct Student
@@ -42,7 +44,7 @@ void del(){
 
 }
 
-void quit(){
+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void quit(){
   if (input == "quit"){
 
     return 0;
