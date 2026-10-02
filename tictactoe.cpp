@@ -16,6 +16,8 @@ int player1_win = 0;
 int player2_win = 0;
 
 
+
+// resets board and sets player as player 1
 void reset(){
   
   board[0][0] = ' ';
@@ -37,7 +39,7 @@ void reset(){
 
 
 
-
+// output board on command line
 void draw_board(){
 
  for(char i = 0; i <4; i++){
@@ -51,7 +53,7 @@ void draw_board(){
 }
 
 
-
+// verifies that input is within column and row limit and the spot is empty
 bool check_move(char row, char col)
 {
   if (col < '1'|| col > '3'){
@@ -70,7 +72,7 @@ bool check_move(char row, char col)
 }
 
 
-
+//draws move on board
 void add_move(char row, char col){
   int c = col - '0';
   int r = row -'a'+1;
@@ -86,28 +88,30 @@ void add_move(char row, char col){
 
 }
 
+
+
 bool check_win(char s){
   for (int i = 1; i < 4; i++){
     if (board[i][1] == s && board[i][2] == s && board[i][3] ==s){
-      return true;
+      return true; // col
     }
     if (board[1][i] == s && board[2][i] == s && board[3][i] ==s){
-      return true;
+      return true; //row
     }
   }
   
     if (board[1][1] == s && board[2][2] == s && board[3][3] == s){
-      return true;
+      return true; //diagonal 1
     }
     if (board[1][3] == s && board[2][2] == s && board[3][1] == s){
-      return true;
+      return true; //diagonal 2
     }
-    return false;							   
+    return false; //no win							   
  
 
 }
 
-
+//for when it's a tie
 bool board_full(){
   for (int i = 1; i < 4; i++){
     for(int j = 1; j < 4; j++){
@@ -175,7 +179,7 @@ int main(){
     draw_board();
     }
     else if (board_full()){
-      cout << "it's a tie" << endl;
+      cout << "it's a tie!" << endl << endl;
       reset();
       draw_board();
 
