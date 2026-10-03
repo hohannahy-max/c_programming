@@ -9,15 +9,12 @@ Project: TicTacToe
 #include <iostream>
 using namespace std;
 
-char board[4][4];
-bool current_player = true;//player 1
-int player1_win = 0;
-int player2_win = 0;
+
 
 
 
 // resets board and sets player as player 1
-void reset(){
+void reset(char board[4][4], bool &current_player){
   
   board[0][0] = ' ';
   board[1][0] = 'a';
@@ -39,7 +36,7 @@ void reset(){
 
 
 // output board on command line
-void draw_board(){
+void draw_board(char board[][4]){
 
  for(char i = 0; i <4; i++){
     for(char j = 0; j <4; j++){
@@ -53,7 +50,7 @@ void draw_board(){
 
 
 // verifies that input is within column and row limit and the spot is empty
-bool check_move(char row, char col)
+bool check_move(char board[4][4],char row, char col)
 {
   if (col < '1'|| col > '3'){
     return false;
@@ -72,7 +69,7 @@ bool check_move(char row, char col)
 
 
 //draws move on board
-void add_move(char row, char col){
+void add_move(char board[4][4], char row, char col, bool current_player){
   int c = col - '0';
   int r = row -'a'+1;
 
@@ -89,7 +86,7 @@ void add_move(char row, char col){
 
 
 
-bool check_win(char s){
+bool check_win(char board[][4],char s){
   for (int i = 1; i < 4; i++){
     if (board[i][1] == s && board[i][2] == s && board[i][3] ==s){
       return true; // col
@@ -111,7 +108,7 @@ bool check_win(char s){
 }
 
 //for when it's a tie
-bool board_full(){
+bool board_full(char board[4][4]){
   for (int i = 1; i < 4; i++){
     for(int j = 1; j < 4; j++){
       if (board[i][j] == ' '){
@@ -125,8 +122,14 @@ bool board_full(){
 
 
 int main(){
-  reset();
-  draw_board();
+
+char board[4][4];
+bool current_player = true;//player 1
+int player1_win = 0;
+int player2_win = 0;
+  
+ reset(board, current_player);
+  draw_board(board);
 
   while (true){
   if (current_player == true){
@@ -145,17 +148,17 @@ int main(){
 
 
 
-  if (!check_move(row,col)){
-      cout << "invalid move." << endl;
-      continue;
+  if (check_move(board, row,col)){
+    add_move(board,row,col, current_player);
+    draw_board(board);
 
-    }
+    
 
-    add_move(row,col);
-    draw_board();
+    
 
     
     char symbol;
+    
     if (current_player ==  true){
       symbol = 'X';
     }else{
@@ -165,7 +168,7 @@ int main(){
 
 
     
-    if (check_win(symbol)){
+    if (check_win(board, symbol)){
       
       if (current_player){
 	player1_win++;
@@ -177,14 +180,14 @@ int main(){
 	cout << "player two wins"<< endl << endl;
       }
       cout << "Player one: " << player1_win << " Player two: " << player2_win<< endl << endl;
-    reset();
-    draw_board();
+      reset(board, current_player);
+    draw_board(board);
     }
-    else if (board_full())
+    else if (board_full(board))
       {
       cout << "it's a tie!" << endl << endl;
-      reset();
-      draw_board();
+      reset(board, current_player);
+      draw_board(board);
     }
     
     else
@@ -193,6 +196,11 @@ int main(){
     }
  
 }
+  else
+    {
+      cout << "invalid move" << endl;
+    }
+  }
   return 0;
 }
 
