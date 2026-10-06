@@ -13,6 +13,7 @@ Your program should have a vector of struct pointers passed by reference, or a v
 
 using namespace std;
 
+
 struct Student
 {
   char f_name[30];
@@ -22,41 +23,49 @@ struct Student
 };
 
 
-
-void add()
+void add(vector<Student> &vtnew)
 {
   cout << "Student first name?" << endl;
+  cin >> newstu.f_name;
   cout<< "Student last name?" << endl;
+  cin >> newstu.l_name;
   cout << "student id?" << endl;
+  cin >> newstu.id;
   cout << "student gpa?" << endl;
+  cin >> newstu.gpa;
 
-}
+  vtnew.push_back(newstu);
+  
+    }
+  
  
-char print(){
+char print(){ /*
   for (struct Student){
-    cout <<
-  }
+    for (int = i = 0; i < struct Student; i++){
+      cout << Student[i]
+    }
+	      */
+  return 0;
+  //}
 
 
 }
 
 void del(){
+  cout << "What is the ID of the student you want to delete" << endl;
+  cin >> id_find;
 
+  
+  //vec.erase
 }
-
-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void quit(){
-  if (input == "quit"){
-
-    return 0;
-  }
-
+void quit(){
 }
 
 
 int main()
-{
+{ 
   cout<< "Do you want to read in students, print them out, delete them, or quit? (ADD, PRINT, DELETE QUIT)" << endl;
-
+  
 												 char choice[7];
 												 cin >> choice;
   if (choice == "ADD"){
