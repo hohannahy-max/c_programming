@@ -23,8 +23,9 @@ struct Student
 };
 
 
-void add(vector<Student> &vtnew)
+void add(vector<Student>& vtnew)
 {
+  Student newstu;
   cout << "Student first name?" << endl;
   cin >> newstu.f_name;
   cout<< "Student last name?" << endl;
@@ -39,11 +40,12 @@ void add(vector<Student> &vtnew)
     }
   
  
-char print(){ /*
-  for (struct Student){
-    for (int = i = 0; i < struct Student; i++){
-      cout << Student[i]
-    }
+char print(vector<Studnet>& vtnew){
+  cout << "student info" << endl;
+  
+  /*
+  for (size_t i = 0; i < list.size <(); ++i){
+  cout << "ID" << list[i].id
 	      */
   return 0;
   //}
@@ -80,8 +82,11 @@ int main()
     del();
 
   }
-  else{
+  else if(choice == "quit") {
     quit();
+  }
+  else{
+    cout<< "invalid choice. try again" << endl;
   }
   return 0;
 }
