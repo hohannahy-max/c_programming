@@ -3,10 +3,7 @@ Name: Hannah Ho
 Project: Student List
 Date: 10/9/26
 
-
-Your program should have a vector of struct pointers passed by reference, or a vector pointer (which will point to a vector of struct pointers). (20 points)
-
- */
+*/
 
 #include <iostream>
 #include <vector>
@@ -50,15 +47,17 @@ char print(vector<Student>& vtnew){
   
   
     
-  //}
+  }
 
 
 }
 
-void del(){
+
+int del(){
   cout << "What is the ID of the student you want to delete" << endl;
   cin >> id_find;
-  auto it = find_if(vtnew.begin(), vtnew.end(), [](int n) {
+  auto it = find_if(vtnew.begin(), vtnew.end(), [](int n)) {
+    return;
   }
 
     if (it!= vtnew.end()){
@@ -68,16 +67,17 @@ void del(){
 }
     
 int main()
-{ 
+{
+  vector<Student> list;
   cout<< "Do you want to read in students, print them out, delete them, or quit? (ADD, PRINT, DELETE QUIT)" << endl;
   
 												 char choice[7];											 cin >> choice;
   if (choice == "ADD"){
-    add(vtnew);
+    add(list);
 
   }
   else if (choice == "PRINT"){
-    print(vtnew);
+    print(list);
 
   }
   else if (choice == "DELETE"){
