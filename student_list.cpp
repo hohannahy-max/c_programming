@@ -10,6 +10,8 @@ Your program should have a vector of struct pointers passed by reference, or a v
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
+
 
 using namespace std;
 
@@ -40,14 +42,14 @@ void add(vector<Student>& vtnew)
     }
   
  
-char print(vector<Studnet>& vtnew){
+char print(vector<Student>& vtnew){
   cout << "student info" << endl;
+ 
+  for (int i = 0; i < vtnew.size <(); ++i){
+    cout << vtnew[i].f_name << vtnew[i].l_name << "," << vtnew[i].id << "," << vtnew[i].gpa<< endl;
   
-  /*
-  for (size_t i = 0; i < list.size <(); ++i){
-  cout << "ID" << list[i].id
-	      */
-  return 0;
+  
+    
   //}
 
 
@@ -56,26 +58,26 @@ char print(vector<Studnet>& vtnew){
 void del(){
   cout << "What is the ID of the student you want to delete" << endl;
   cin >> id_find;
+  auto it = find_if(vtnew.begin(), vtnew.end(), [](int n) {
+  }
 
+    if (it!= vtnew.end()){
+      cout << "Deleted" << endl;
+    }
   
-  //vec.erase
 }
-void quit(){
-}
-
-
+    
 int main()
 { 
   cout<< "Do you want to read in students, print them out, delete them, or quit? (ADD, PRINT, DELETE QUIT)" << endl;
   
-												 char choice[7];
-												 cin >> choice;
+												 char choice[7];											 cin >> choice;
   if (choice == "ADD"){
-    add();
+    add(vtnew);
 
   }
   else if (choice == "PRINT"){
-    print();
+    print(vtnew);
 
   }
   else if (choice == "DELETE"){
@@ -83,7 +85,7 @@ int main()
 
   }
   else if(choice == "quit") {
-    quit();
+    return 0;
   }
   else{
     cout<< "invalid choice. try again" << endl;
