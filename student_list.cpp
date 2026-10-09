@@ -8,6 +8,7 @@ Date: 10/9/26
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <cstring>
 
 
 using namespace std;
@@ -39,10 +40,10 @@ void add(vector<Student>& vtnew)
     }
   
  
-char print(vector<Student>& vtnew){
+char print(const vector<Student>& vtnew){
   cout << "student info" << endl;
  
-  for (int i = 0; i < vtnew.size <(); ++i){
+  for (size_t i= 0; i < vtnew.size (); ++i){
     cout << vtnew[i].f_name << vtnew[i].l_name << "," << vtnew[i].id << "," << vtnew[i].gpa<< endl;
   
   
@@ -54,14 +55,19 @@ char print(vector<Student>& vtnew){
 
 
 int del(){
+  int id;
   cout << "What is the ID of the student you want to delete" << endl;
   cin >> id_find;
-  auto it = find_if(vtnew.begin(), vtnew.end(), [](int n)) {
-    return;
+  auto it = find_if(vtnew.begin(), vtnew.end(), [id_find](const Studnet& s) {
+    return s.id == id.find;
   }
 
     if (it!= vtnew.end()){
+      vtnew.erase(it);
       cout << "Deleted" << endl;
+    } else {
+      cout << "ID not found" << endl;
+
     }
   
 }
@@ -72,19 +78,20 @@ int main()
   cout<< "Do you want to read in students, print them out, delete them, or quit? (ADD, PRINT, DELETE QUIT)" << endl;
   
 												 char choice[7];											 cin >> choice;
-  if (choice == "ADD"){
+												 if (strcmp(choice,"ADD")> 0){
     add(list);
 
   }
-  else if (choice == "PRINT"){
+  else if (strcmp(choice,"PRINT")> 0){
     print(list);
 
   }
-  else if (choice == "DELETE"){
-    del();
+  else if (strcmp(choice,"DELETE")> 0){
+    del(list);
 
   }
-  else if(choice == "quit") {
+  else if(strcmp(choice,"DELETE") >0) {
+    cout << "Bye bye" << endl;
     return 0;
   }
   else{
