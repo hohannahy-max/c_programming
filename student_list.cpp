@@ -38,13 +38,13 @@ void add(vector<Student>& vtnew)
   vtnew.push_back(newstu);
   
     }
-  
- 
-char print(const vector<Student>& vtnew){
+
+
+void print(const vector<Student>& vtnew){
   cout << "student info" << endl;
  
   for (size_t i= 0; i < vtnew.size (); ++i){
-    cout << vtnew[i].f_name << vtnew[i].l_name << "," << vtnew[i].id << "," << vtnew[i].gpa<< endl;
+    cout << vtnew[i].f_name << " " <<  vtnew[i].l_name << "," << vtnew[i].id << "," << vtnew[i].gpa<< endl;
   
   
     
@@ -54,13 +54,14 @@ char print(const vector<Student>& vtnew){
 }
 
 
-int del(){
-  int id;
+void del(vector<Student>& vtnew) {
+  int id_find;
   cout << "What is the ID of the student you want to delete" << endl;
   cin >> id_find;
-  auto it = find_if(vtnew.begin(), vtnew.end(), [id_find](const Studnet& s) {
-    return s.id == id.find;
-  }
+  
+  auto it = find_if(vtnew.begin(), vtnew.end(), [id_find](const Student& s) {
+    return s.id == id_find;
+  });
 
     if (it!= vtnew.end()){
       vtnew.erase(it);
@@ -75,27 +76,39 @@ int del(){
 int main()
 {
   vector<Student> list;
-  cout<< "Do you want to read in students, print them out, delete them, or quit? (ADD, PRINT, DELETE QUIT)" << endl;
-  
-												 char choice[7];											 cin >> choice;
-												 if (strcmp(choice,"ADD")> 0){
+  bool run = true;
+
+
+												 while (run == true) {
+												   												 char choice[7];
+
+			 cout<< "Do you want to read in students, print them out, delete them, or quit? (ADD, PRINT, DELETE or QUIT)" << endl;
+			 cin.width(7);
+ cin >> choice;
+
+
+			 if (strcmp(choice,"ADD") == 0){
     add(list);
 
   }
-  else if (strcmp(choice,"PRINT")> 0){
+  else if (strcmp(choice,"PRINT") == 0){
     print(list);
 
   }
-  else if (strcmp(choice,"DELETE")> 0){
+  else if (strcmp(choice,"DELETE") == 0){
     del(list);
 
   }
-  else if(strcmp(choice,"DELETE") >0) {
+  else if(strcmp(choice,"QUIT") == 0) {
     cout << "Bye bye" << endl;
-    return 0;
+    run  = false;
   }
   else{
     cout<< "invalid choice. try again" << endl;
   }
+												 }
   return 0;
+										  
 }
+
+		
