@@ -22,7 +22,7 @@ struct Student
   float gpa;
 };
 
-
+//by reference
 void add(vector<Student>& vtnew)
 {
   Student newstu;
@@ -35,16 +35,16 @@ void add(vector<Student>& vtnew)
   cout << "student gpa?" << endl;
   cin >> newstu.gpa;
 
-  vtnew.push_back(newstu);
+  vtnew.push_back(newstu); //adds new struct to vector
   
     }
 
-
+//Goes through structs in vector and prints them out
 void print(const vector<Student>& vtnew){
   cout << "student info" << endl;
  
   for (size_t i= 0; i < vtnew.size (); ++i){
-    cout << vtnew[i].f_name << " " <<  vtnew[i].l_name << "," << vtnew[i].id << "," << vtnew[i].gpa<< endl;
+    cout << vtnew[i].f_name << " " <<  vtnew[i].l_name << ", " << vtnew[i].id << ", " << vtnew[i].gpa<< endl;
   
   
     
@@ -63,10 +63,13 @@ void del(vector<Student>& vtnew) {
     return s.id == id_find;
   });
 
+  //if the id is found
     if (it!= vtnew.end()){
       vtnew.erase(it);
       cout << "Deleted" << endl;
-    } else {
+    }
+    // if the id is not
+    else {
       cout << "ID not found" << endl;
 
     }
