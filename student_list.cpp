@@ -70,7 +70,7 @@ void print(const vector<Student*>& vtnew){
   //goes through each pointer in vector and prints student info out
   for (size_t i= 0; i < vtnew.size (); ++i){
 
-    cout << vtnew[i]->f_name << " " <<  vtnew[i]->l_name << "," << vtnew[i]->id << ","<<fixed << setprecision(2) << vtnew[i]->gpa<< endl;
+    cout << vtnew[i]->f_name << " " <<  vtnew[i]->l_name << ", " << vtnew[i]->id << ", "<<fixed << setprecision(2) << vtnew[i]->gpa<< endl;
 
 
   
