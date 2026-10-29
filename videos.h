@@ -1,0 +1,19 @@
+#include <iostream>
+#include <cstring>
+#include "parent.h"
+
+using namespace std;
+
+class music : public media_parent{
+ public:
+  int year;
+  char title[100];
+  char artist[100];
+  char publisher[100];
+  char duration[4];
+};
+
+
+
+
+
