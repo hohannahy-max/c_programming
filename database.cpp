@@ -14,6 +14,8 @@ int main(){
   vector<Databse*> list;
   bool run = true;
 
+  // static_cast<destination_type>()
+  
   while (run == true){
 
 

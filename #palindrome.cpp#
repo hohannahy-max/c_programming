@@ -1,0 +1,41 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+
+
+int main(){
+  char str[80]; // array to write in
+  char str_1[80]; //array to write reverse in
+  cin >> str;
+
+  /*
+  //Get rid of spaces and punctuation
+  str2 = st
+  for (int i =0, len = strlen(str); i <len; i++){
+    if (ispunct(str[]))
+      {
+	str.erase(i--,1);
+	len = strlen(len);
+
+      }
+
+
+  }
+
+  */
+ 
+  cout << str << endl;
+  /*
+  bool palindrome = false;
+
+  if (palindrome == true){
+    cout << "Palindrome" << endl;
+  } else {
+cout << "Not a palindrome" << endl;
+
+
+  }
+  */
+  return 0;
+}

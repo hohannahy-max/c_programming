@@ -5,17 +5,12 @@
 using namespace std;
 
 class games : public media_parent{
- protected:
+ public:
   int year;
   char title[100];
   char artist[100];
   char publisher[100];
   float rating;
-
-
-
-
-
 };
 
 

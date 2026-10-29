@@ -4,3 +4,15 @@ using namespace std;
 
 
 //title, year
+media_parent :: media_parent(){
+
+
+}
+
+void getTitle(){
+
+}
+
+void getYear(){
+
+}

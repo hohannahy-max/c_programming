@@ -1,0 +1,17 @@
+#include <iostream>
+#include "media_parent.h"
+using namespace std;
+
+
+media_parent :: media_parent(){
+
+
+}
+
+void media_parent::getTitle(){
+
+}
+
+void media_parent::getYear(){
+
+}

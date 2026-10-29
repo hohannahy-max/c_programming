@@ -1,0 +1,6 @@
+#include <iostream>
+//#include "games.h"
+//#include "music.h"
+//#include "movies.h"
+
+using std namespace;
