@@ -1,3 +1,11 @@
+/*
+Name: Hannah Ho
+Project: Classes
+Date: 11/8/26
+
+ */
+
+
 #include <iostream>
 #include <cstring>
 #include "parent.h"
@@ -8,70 +16,23 @@ class games : public media_parent{
  public:
 
   void title() override{
-    cout << "Who's the artist?" << endl;
+    cout << "What's the title of the movie?" << endl;
   }
   
   char artist[100];
 
-   void title() override{
-    cout << "Who's the publisher?" << endl;
+   void year() override{
+    cout << "When did the game come out?" << endl;
   }
 
-  char publisher[100];
-  float rating;
-};
+  char publisher[100](){
+    cout << "Who is the game's publisher" << endl;
 
+  }
+  float rating(){
+    cout << "What is the game's rating" << endl;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#include <iostream>
-#include <cstring>
-#include "parent.h"
-
-using namespace std;
-
-class games : public media_parent{
- protected:
-  int year;
-  char title[100];
-  char artist[100];
-  char publisher[100];
-  float rating;
-
-
-
-
-
-#include <iostream>
-#include <cstring>
-#include "parent.h"
-
-using namespace std;
-
-class games : public media_parent{
- protected:
-  int year;
-  char title[100];
-  char artist[100];
-  char publisher[100];
-  float rating;
-
-
-
-
+  }
 
 };
 

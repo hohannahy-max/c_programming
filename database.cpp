@@ -3,10 +3,11 @@
 #include <iostream>
 #include <cstring>
 #include <vector>
+#include "media_parent.h"
 #include "games.h"
-//#include "music.h"
-//#include "movies.h"
-//#include "media_parent.h"
+#include "music.h"
+#include "movies.h"
+
 
 using namespace std;
 
@@ -23,7 +24,18 @@ int main()
 
      if (strcmp(choice,"ADD") == 0){
        cout << "What kind of media? (games, movies, music)";
-       static_cast<char>(games)
+       cin >> char type[50];
+       if (strcmp(type, "games") == 0){
+
+       }
+       if (strcmp(type, "movies") == 0{
+
+	 }
+
+	 if (strcmp(type, "music") == 0{
+
+	   }
+       static_cast<char>(games)-
     add(list);
 
   }
@@ -33,7 +45,9 @@ int main()
     cout << "Delete item (Input title or year)" << endl;
     cin>> print_input << endl;
     //add to child
-
+    for(){
+      cout << object;
+    }
     //for all titles look for if not there look through year
   }
   else if (strcmp(choice,"DELETE") == 0){
