@@ -6,9 +6,17 @@ using namespace std;
 
 class games : public media_parent{
  public:
-  int year;
-  char title[100];
+
+  void title() override{
+    cout << "Who's the artist?" << endl;
+  }
+  
   char artist[100];
+
+   void title() override{
+    cout << "Who's the publisher?" << endl;
+  }
+
   char publisher[100];
   float rating;
 };

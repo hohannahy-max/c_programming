@@ -1,0 +1,13 @@
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+class media_parent  : class media_parent{
+
+ public:
+  int year;
+  char title[50];
+
+
+};

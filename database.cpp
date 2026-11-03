@@ -6,14 +6,12 @@
 #include "games.h"
 //#include "music.h"
 //#include "movies.h"
+//#include "media_parent.h"
 
 using namespace std;
 
-int main(){
-
-  vector<Databse*> list;
-  bool run = true;
-
+int main()
+{
   // static_cast<destination_type>()
   
   while (run == true){
@@ -24,16 +22,23 @@ int main(){
     cin >> choice;
 
      if (strcmp(choice,"ADD") == 0){
-       cout << "What kind of media? (games, movies, music)";xs
+       cout << "What kind of media? (games, movies, music)";
+       static_cast<char>(games)
     add(list);
 
   }
-  else if (strcmp(choice,"PRINT") == 0){
-    print(list);
 
+  else if (strcmp(choice,"SEARCH") == 0){
+    print(list);
+    cout << "Delete item (Input title or year)" << endl;
+    cin>> print_input << endl;
+    //add to child
+
+    //for all titles look for if not there look through year
   }
   else if (strcmp(choice,"DELETE") == 0){
-    del(list);
+    //~MyMedia(){ delete data; cout << "Destructor" << endl;};
+        //for all titles look for if not there look through year then delete
 
   }
   else if(strcmp(choice,"QUIT") == 0) {

@@ -6,15 +6,12 @@ using namespace std;
 //method for getRating(), getDirector(), getDuration()
 //
 games::games(){
-  cout << "Game Cosntructr" << endl;
+  cout << "Game Constructor" << endl;
 }
-void games::getRating(){
-
+float games::getRating(){
+  return rating;
   }
-void games::getDirector(){
-
-  }
-void games::getDuration(){
+void games::getPublisher(){
 
   }
 
