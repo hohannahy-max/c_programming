@@ -5,7 +5,7 @@ using namespace std;
 
 class media_parent{
 
- public:
+ protected:
   virtual int year(){
     cout << "What year did it come out?" << endl;
 
@@ -15,5 +15,6 @@ class media_parent{
     cout << "What's the title??" << endl;
   }
 
+  
 
 };

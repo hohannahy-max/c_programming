@@ -8,11 +8,11 @@ using namespace std;
 games::games(){
   cout << "Game Constructor" << endl;
 }
-float games::getRating(){
+float games::getRating( ){
   return rating;
   }
 void games::getPublisher(){
-
+  return publisher;
   }
 
 }
