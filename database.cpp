@@ -51,32 +51,25 @@ Database* newmed = new media
  cout << "What kind of media? (games, music or movies)" << endl;
  cin >> type;
 
- if (strcmp(type, "games") == 0){
-
- }
- else if (strcmp(type, "music") == 0){
-
- }
- else if (strcmp(type, "music") == 0){
-
- }
- else{
-   cout << "Please input again" << endl;
- }
-
-
-    }
-
      void search(vector<Database*>& vtnew){
-       char keyword[30];
 
+       char keyword[30];
+       cout << "Search by  year or title???"
+	 cin >> search_term;
+	 for (int i; i <= database_size; i++){
+	   if (strcmp(search_term, title)== 0){
+	   cout << database -> getYear();
+	 }
+	   if (strcmp(search_term, title)== 0){
+	     cout << database -> getTitle();
+	 }
+	 }
      }
 
      void del(vector<Database*>& vtnew){
        char find[40];
        cout << "Type in year or title to delete media" << endl;
        cin >> find;
-       static_cast<destination_type>()
 
 	 auto it = find_if(vtnew.begin(), vtnew.end(), [find](const Student* s){
 	   return;
@@ -87,11 +80,12 @@ Database* newmed = new media
 	     cout << "Deleted" << endl;
 	   }
 	   
+ //~MyMedia(){ delete data; cout << "Destructor" << endl;};
 
 	 
      }
 
-     void quit(vector<Database*>& vtnew){
+     void quit(){
        running = false;
      }
 	 /*
@@ -106,13 +100,14 @@ Database* newmed = new media
     for(){
       cout << object;
     }
-    //for all titles look for if not there look through year
 
-    
+
   }
   else if (strcmp(choice,"DELETE") == 0){
+
     //~MyMedia(){ delete data; cout << "Destructor" << endl;};
         //for all titles look for if not the
   return 0;
 }
 	 */
+

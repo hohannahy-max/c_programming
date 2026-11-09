@@ -4,15 +4,13 @@
 using namespace std;
 
 class media_parent{
-
- protected:
-  virtual int year(){
-    cout << "What year did it come out?" << endl;
-
+public:
+  void int year(char type[20], int year){
+    strcpy(y, year);
 
   }
-  virtual char title[50](){
-    cout << "What's the title??" << endl;
+  void char title[50](){
+    strcpy(t, title);
   }
 
   
