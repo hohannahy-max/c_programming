@@ -10,17 +10,18 @@ class media_parent :: media_parent(){
 
 }
 
-char setTitle(char type[20], char title){
+char setTitle(char type, char title){
 
 }
 
 char setYear(char type[20], int year){
 
-  
+   cout << "What's the title" << endl;
+
 }
 
 void getTitle(){
-  cout << "What's the title" << endl;
+  database
 }
 
 void getYear(){

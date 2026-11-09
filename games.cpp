@@ -7,7 +7,9 @@ using namespace std;
 int main(){
   games g* = new game();
   vector<media_parent*> storage;
-  storage.pushback(g)
+  //if different features 
+  storage.pushback(g);
+  g->getTitle();
 
 
 }

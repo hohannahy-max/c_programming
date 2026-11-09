@@ -109,5 +109,8 @@ Database* newmed = new media
         //for all titles look for if not the
   return 0;
 }
-	 */
+return 0;	 */
 
+
+	 //before closing out prevent memory leak :D
+     }
