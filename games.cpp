@@ -3,7 +3,7 @@
 #include "games.h"
 using namespace std;
 
-//method for getRating(), getDirector(), getDuration()
+
 games:: games(const char* newTitle, int newYear, const char* newPublisher, float newRating) : Media(newTitle, newYear){
   publisher = new char[strlen(newPublisher) + 1];
   strcoy(publisher, newPublisher);
@@ -32,4 +32,3 @@ void games::print(){
 
 }
 
-}

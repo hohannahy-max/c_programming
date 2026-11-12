@@ -9,7 +9,7 @@ protected:
   char* title;
   int year;
 public:
-  Media(const char* newTItle, int newYear);
+  Media(const char* newTitle, int newYear);
 
   virtual ~Media();
 

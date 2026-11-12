@@ -1,0 +1,22 @@
+#include "media_parent.h"
+
+using namespace std;
+
+class music : public media_parent{
+
+
+private:
+  char* artist;
+  int duration;
+  char* puublisher;
+  
+ public:
+  Movie(const char* newTitle, const char* newDirector, int newYear, int newDuration, float newRa\
+ting);
+
+  char* getDirector();
+  int getDuration();
+  float getRating();
+
+  int getType() override;
+  int print() override;

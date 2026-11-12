@@ -16,7 +16,7 @@ class games : public media_parent{
 
 private:
   
-  char* getPublisher;
+  char* publisher;
   float rating;
 
 public:

@@ -1,3 +1,4 @@
+
 //THIS IS THE MAIN cpp
 
 #include <iostream>
@@ -10,15 +11,16 @@
 
 
 using namespace std;
+
 void add(vector<Media*>& database);
 void search(const vector<Media*>& database);
 void del(vector<Media*>& database);
 void print(Media* item)
 
 int main()
-{vector<Media*>& database
-  // static_cast<destination_type>()
-  
+{
+
+  vector<Media*>& database;  
   while (run == true){
 
 
@@ -46,8 +48,14 @@ int main()
 	 cout << "Try again"
        }
 
-       static_cast<char>(games)-
-    add(list);
+
+       for (size_t i = 0; i < database.size(); i++){
+	 delete database[i];
+	 database.clear();
+
+       }
+       
+
        return 0;
 
      }
@@ -77,48 +85,29 @@ Database* newmed = new media
      void del(vector<Media*>& database){
        char find[40];
        cout << "Type in year or title to delete media" << endl;
-       cin >> find;
+   cin >> search_term;
+         for (int i; i <= database_size; i++){
+           if (strcmp(search_term, title)== 0){
+           cout << database -> getYear();
+	   ~
+         }
+           if (strcmp(search_term, title)== 0){
+             cout << database -> getTitle();
+	     ~
+         }
+         }
 
-	 auto it = find_if(vtnew.begin(), vtnew.end(), [find](const Student* s){
-	   return;
-	 }
-	   if (!it =vtnew.end()){
-	     delete *it;
-	     vtnew.erase(it);
-	     cout << "Deleted" << endl;
-	   }
-	   
- //~MyMedia(){ delete data; cout << "Destructor" << endl;};
-
-	 
-     }
+    
 
      void quit(){
        running = false;
      }
-	 /*
-
 	 
-
-  else if (strcmp(choice,"SEARCH") == 0){
-    print(list);
-    cout << "Delete item (Input title or year)" << endl;
-    cin>> print_input << endl;
-    //add to child
-    for(){
-      cout << object;
-    }
-
-
-  }
-  else if (strcmp(choice,"DELETE") == 0){
-
-    //~MyMedia(){ delete data; cout << "Destructor" << endl;};
-        //for all titles look for if not the
-  return 0;
-}
-return 0;	 */
-
-
 	 //before closing out prevent memory leak :D
+     for (size_t i = 0; i < list.size(); i++){
+       delete databse[i];
+       
      }
+     database.clear();
+     
+     

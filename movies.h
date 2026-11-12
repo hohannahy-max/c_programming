@@ -21,6 +21,4 @@ private:
   int getType() override;
   int print() override;
 
-};  
-
-
+};

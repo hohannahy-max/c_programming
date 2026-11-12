@@ -1,0 +1,23 @@
+#include <iostream>
+#include <cstring>
+#include "games.h"
+using namespace std;
+
+
+movies::movies(const char* newTitle, const char* newDirector, int newYear, int newDuration, float newRating) : Media(newTitle, newYear){
+  director = new char[strlen(newDirector) + 1];
+  strcpy(director, newDirector);
+  rating = newRating;
+  duration = newDuration;
+}
+
+games:: ~games(){
+
+  delete publisher[];
+}
+float games::getRating( ){
+  return rating;
+  }
+char* games::getPublisher(){
+  return publisher;
+  }
