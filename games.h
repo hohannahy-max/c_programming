@@ -14,19 +14,19 @@ using namespace std;
 
 class games : public media_parent{
 
-protected:
-  char publisher[50];
-  char rating[50];
+private:
+  
+  char* getPublisher;
+  float rating;
 
 public:
+  games(const char* newTitle, int newYear, const char* newPublisher, float newRating);
 
-  char getPublisher(char publisher[20]){
-    strcpy(p,publisher);
-  }
-  char getRating(const , char rating[20]){
-    strcpy(r, rating);
-  }
+  char* getPublisher();
+  float getRating();
 
+  int getType() override;
+  int print() override;
 };
 
 

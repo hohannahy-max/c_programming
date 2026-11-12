@@ -4,24 +4,32 @@
 using namespace std;
 
 //method for getRating(), getDirector(), getDuration()
-int main(){
-  games g* = new game();
-  vector<media_parent*> storage;
-  //if different features 
-  storage.pushback(g);
-  g->getTitle();
-
-
+games:: games(const char* newTitle, int newYear, const char* newPublisher, float newRating) : Media(newTitle, newYear){
+  publisher = new char[strlen(newPublisher) + 1];
+  strcoy(publisher, newPublisher);
+  rating = newRating;
 }
 
-games::games(){
-  cout << "Game Constructor" << endl;
+games:: ~games(){
+
+  delete publisher[];
 }
 float games::getRating( ){
   return rating;
   }
-void games::getPublisher(){
+char* games::getPublisher(){
   return publisher;
   }
+int games::getType() {
+  return 1; //video games number
+}
+
+void games::print(){
+  cout << "Title" << title << endl;
+  cout << "Year" << year << endl;
+  cout << "Publisher" << publisher << endl;
+  cout << "Rating" << rating << endl;
+
+}
 
 }

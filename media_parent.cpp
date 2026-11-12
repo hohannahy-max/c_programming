@@ -1,11 +1,11 @@
 #include <iostream>
 #include <cstring>
-#include "media_parent.h"
+#include "Media.h"
 using namespace std;
 
 
 //title, year
-class media_parent :: media_parent(){
+class Media::Media(){
 
 
 }

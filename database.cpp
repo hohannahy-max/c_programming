@@ -10,9 +10,13 @@
 
 
 using namespace std;
+void add(vector<Media*>& database);
+void search(const vector<Media*>& database);
+void del(vector<Media*>& database);
+void print(Media* item)
 
 int main()
-{
+{vector<Media*>& database
   // static_cast<destination_type>()
   
   while (run == true){
@@ -23,15 +27,19 @@ int main()
     cin >> choice;
 
      if (strcmp(choice,"add") == 0){
+       add(database);
      }
      else if (strcmp(choice, "search") == 0){
+       search(database);
 
        }
      else if (strcmp(choice, "delete") == 0{
+	 del(database);
 
 	 }
 
        else if (strcmp(choice, "quit")) == 0{
+	   running = false;
 
 	   }
        else{
@@ -45,13 +53,13 @@ int main()
      }
 
 
-    void add(vector<Database*>& vtnew){
+    void add(vector<Media*>& database){
 Database* newmed = new media
   char type[7];
  cout << "What kind of media? (games, music or movies)" << endl;
  cin >> type;
 
-     void search(vector<Database*>& vtnew){
+     void search(vector<Media*>& database){
 
        char keyword[30];
        cout << "Search by  year or title???"
@@ -66,7 +74,7 @@ Database* newmed = new media
 	 }
      }
 
-     void del(vector<Database*>& vtnew){
+     void del(vector<Media*>& database){
        char find[40];
        cout << "Type in year or title to delete media" << endl;
        cin >> find;

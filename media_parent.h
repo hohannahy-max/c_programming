@@ -3,15 +3,21 @@
 
 using namespace std;
 
-class media_parent{
-public:
-  void int year(char type[20], int year){
-    strcpy(y, year);
+class Media{
 
-  }
-  void char title[50](){
-    strcpy(t, title);
-  }
+protected:
+  char* title;
+  int year;
+public:
+  Media(const char* newTItle, int newYear);
+
+  virtual ~Media();
+
+  char* getTitle();
+  int getYear();
+
+  virtual int getType();
+  virtual void print();
 
   
 
