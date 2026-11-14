@@ -80,10 +80,12 @@ void add(vector<Media*>& database){
    cin.getline(title, 100);
    cout << "Enter release date: " << endl;
    cin >> year;
+   cin.ignore(1000, '\n');
    cout << "Enter publisher: " << endl;
    cin.getline(publisher, 100);
    cout << "Enter rating out of ten: " << endl;
    cin >> rating;
+   cin.ignore(1000, '\n');
 
    database.push_back(new games(title, year, publisher, rating));
    cout << "added" << endl;
@@ -97,13 +99,14 @@ char publisher[100];
    cin.getline(title, 100);
    cout << "Enter release date: " << endl;
    cin >> year;
+   cin.ignore(1000, '\n');
    cout << "Enter publisher: " << endl;
    cin.getline(publisher, 100);
     cout << "Enter artist: " << endl;
    cin.getline(artist, 100);
    cout << "Enter duration in seconds: " << endl;
    cin >> duration;
-
+cin.ignore(1000, '\n');
    database.push_back(new music(title,artist,  year, duration, publisher));
    cout << "added" << endl;
 
@@ -118,12 +121,14 @@ char director[100];
    cin.getline(title, 100);
    cout << "Enter release date: " << endl;
    cin >> year;
+   cin.ignore(1000, '\n');
    cout << "Enter director: " << endl;
    cin.getline(director, 100);
    cout << "Enter duration in minutes" << endl;
    cin >> duration;
    cout << "Enter rating out of 10: " << endl;
    cin >> rating;
+   cin.ignore(1000, '\n');
 
    database.push_back(new movies(title, director, year, duration, rating));
    cout << "added" << endl;
@@ -160,9 +165,9 @@ char director[100];
        else if (item -> getType() == 3) {
 	 movies* mo = static_cast<movies*>(item);
 	 cout << "Movie title: " << mo->getTitle()<< endl;
-	 cout << "Game release year: " << mo->getYear()<< endl;
-	 cout << "Game duration: " << mo-> getDuration() << "min" << endl;
-	 cout << "Game rating: " << mo-> getRating() <<"/10" << endl;
+	 cout << "Movie release year: " << mo->getYear()<< endl;
+	 cout << "Movie duration: " << mo-> getDuration() << "min" << endl;
+	 cout << "Movie rating: " << mo-> getRating() <<"/10" << endl;
 
      }
      }
@@ -175,22 +180,23 @@ char director[100];
    cin.getline(keyword, 100);
    bool found = false;
 
-   if (strcmp(keyword, title)== 0){
+   if (strcmp(keyword, "title")== 0){
      char searchTitle[100];
      cout << "Enter title to search" << endl;
-     cin.getline(searchTitle, 100);
+     cin.getline(searchTitle, 30);
      
      for (Media* item : database){
        if (strcmp(item->getTitle(), searchTitle) == 0){
-       item->print();
+	 print(item);
        found =true;
      }
      }
    }
- else if (strcmp(keyword, year)== 0){
-     char searchYear[100];
-     cout << "Enter title to search" << endl;
-     cin.getline(searchYear, 100);
+ else if (strcmp(keyword, "year")== 0){
+     int searchYear;
+     cout << "Enter year to search" << endl;
+     cin>> searchYear;
+     cin.ignore(1000, '\n');
      
      for (Media* item : database){
        if(item->getYear() == searchYear){
@@ -240,7 +246,7 @@ char director[100];
        if (strcmp(keyword, "title") == 0 && strcmp(database[i]->getTitle(), searchTitle) == 0){
 	 match = true;
        }
-       else if(strcmp(keyword, "year") == 0 && strcmp(database[i]->getYear(), searchYear) == 0){
+       else if(strcmp(keyword, "year") == 0 && database[i]->getYear() == searchYear){
 	 match = true;
        }
 
@@ -248,7 +254,7 @@ char director[100];
        if (match) {
 	 found = true;
 	 cout << "Found match: ";
-	 database[i]->print();
+	 print(database[i]);
 
 	 char confirm[10];
 	 cout << "Do you want to delete this item? (yes/no)" << endl;
@@ -265,7 +271,9 @@ char director[100];
        
          }
      
-       if (!found){
+     }
+     if (!found){
 	 cout<< "NO match found" << endl;
 
        }
+ }
