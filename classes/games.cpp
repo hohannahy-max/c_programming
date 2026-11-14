@@ -10,10 +10,13 @@ games:: games(const char* newTitle, int newYear, const char* newPublisher, float
   rating = newRating;
 }
 
+//destructor
 games:: ~games(){
 
   delete[] publisher;
 }
+//return rating, publisher, and type
+
 float games::getRating( ){
   return rating;
   }
@@ -21,7 +24,7 @@ char* games::getPublisher(){
   return publisher;
   }
 int games::getType() {
-  return 1; //video games number
+  return 1; //return game identifier
 }
 
 

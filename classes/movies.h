@@ -13,13 +13,17 @@ private:
   int duration;
   float rating;
  public:
+  //initializes movie's title, director, year, duration, and rating
   movies(const char* newTitle, const char* newDirector, int newYear, int newDuration, float newRating);
-  ~movies() override;
+  
+  ~movies() override;//destructor
+
+  //returns director, duration, rating
   char* getDirector();
   int getDuration();
   float getRating();
 
-  int getType() override;
+  int getType() override;//returns type identifier (3)
 
 };
 

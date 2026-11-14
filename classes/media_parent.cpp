@@ -11,10 +11,11 @@ Media::Media(const char* newTitle, int newYear){
   year = newYear;
 
 }
+//destructor
 Media::~Media(){
   delete[] title;
 }
-
+//returns title, year and type
 char* Media::getTitle(){
   return title;
 

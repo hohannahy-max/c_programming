@@ -12,11 +12,14 @@ music::music(const char* newTitle, const char* newArtist, int newYear, int newDu
   duration = newDuration;
 }
 
+//destructor
 music:: ~music(){
 
   delete[] publisher;
   delete[] artist;
 }
+//return artist, publisher,duration, and type
+
 char* music::getArtist( ){
   return artist;
   }

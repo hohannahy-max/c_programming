@@ -16,6 +16,7 @@ Project: Classes
 
 using namespace std;
 
+//function declaration
 void add(vector<Media*>& database);
 void search(const vector<Media*>& database);
 void del(vector<Media*>& database);
@@ -23,7 +24,7 @@ void print(Media* item);
 
 int main()
 {
-
+  //create vector of media pointers to store media
   vector<Media*> database;
   char choice[20];
   bool running = true;
@@ -52,11 +53,12 @@ int main()
 
        }
 
-
+  //delete remaining media objects before quitting
        for (Media* item : database){
 	 delete item;
 
        }
+       //clear
        database.clear();
 
        return 0;
@@ -64,7 +66,7 @@ int main()
      }
     
 
-
+//add
 void add(vector<Media*>& database){
   char type[20];
   cout << "What kind of media? (games, music or movies)" << endl;
@@ -72,6 +74,7 @@ void add(vector<Media*>& database){
  char title[100];
  int year;
 
+ //add game
  if (strcmp(type, "games") == 0){
    char publisher[100];
    float rating;
@@ -87,9 +90,11 @@ void add(vector<Media*>& database){
    cin >> rating;
    cin.ignore(1000, '\n');
 
+   //create game object and add pointer to database
    database.push_back(new games(title, year, publisher, rating));
    cout << "added" << endl;
  }
+ //add music
  else if (strcmp(type, "music") == 0){
    int duration;
 char publisher[100];
@@ -107,10 +112,13 @@ char publisher[100];
    cout << "Enter duration in seconds: " << endl;
    cin >> duration;
 cin.ignore(1000, '\n');
+
+//create music and add its pointer to database
    database.push_back(new music(title,artist,  year, duration, publisher));
    cout << "added" << endl;
 
  }
+ //add movie
  else if (strcmp(type, "movies") == 0){
 
  int duration;
@@ -130,6 +138,8 @@ char director[100];
    cin >> rating;
    cin.ignore(1000, '\n');
 
+   
+//create movie  and add its pointer to database
    database.push_back(new movies(title, director, year, duration, rating));
    cout << "added" << endl;
 
@@ -139,11 +149,7 @@ char director[100];
  }
 }
 
-
-
-
-
-
+//print info of media by checking media type 
      void print(Media* item){
 
        if (item -> getType() ==1) {
@@ -173,18 +179,20 @@ char director[100];
      }
 
        
-
+//search the database by title or year and print out media information
  void search(const vector<Media*>& database){
    char keyword[30];
    cout << "Search by  year or title???" << endl;
    cin.getline(keyword, 30);
    bool found = false;
 
+   //search for media by title
    if (strcmp(keyword, "title")== 0){
      char searchTitle[100];
      cout << "Enter title to search" << endl;
      cin.getline(searchTitle, 100);
      
+     // check database for matching title
      for (Media* item : database){
        if (strcmp(item->getTitle(), searchTitle) == 0){
 	 print(item);
@@ -192,12 +200,14 @@ char director[100];
      }
      }
    }
+
+   //search for media by year 
  else if (strcmp(keyword, "year")== 0){
      int searchYear;
      cout << "Enter year to search" << endl;
      cin>> searchYear;
      cin.ignore(1000, '\n');
-     
+     //check database for matching year
      for (Media* item : database){
        if(item->getYear() == searchYear){
 	 print(item);
@@ -216,7 +226,7 @@ char director[100];
  }
  }
 
-
+//deletes media from database by title or year
  void del(vector<Media*>& database){
    char keyword[40];
    char searchTitle[100];
@@ -225,11 +235,13 @@ char director[100];
    cout << "Delete by year or title?" << endl;
    cin >> keyword;
    cin.ignore(1000, '\n');
+   //delete by title
      if (strcmp(keyword, "title")== 0){
        cout << "Enter title to delete: " << endl;
        cin.getline(searchTitle,100);
 	  
          }
+     //delete by year
      else if (strcmp(keyword, "year")== 0){
        cout << "Enter year to delete: " << endl;
        cin >> searchYear;
@@ -240,18 +252,23 @@ char director[100];
        cout << "Try again" << endl;
        return;
      }
-     bool found = false;
 
+     
+     bool found = false;
      for (int i = static_cast<int>(database.size()) - 1; i >=0; i--){
 
        bool match = false;
+
+       //check if item's title matches
        if (strcmp(keyword, "title") == 0 && strcmp(database[i]->getTitle(), searchTitle) == 0){
 	 match = true;
        }
+
+       //check if item's year matches
        else if(strcmp(keyword, "year") == 0 && database[i]->getYear() == searchYear){
 	 match = true;
        }
-
+       //ask to confirm
        
        if (match) {
 	 found = true;
@@ -262,6 +279,7 @@ char director[100];
 	 cout << "Do you want to delete this item? (yes/no)" << endl;
 	 cin.getline(confirm,10);
 
+	 //remove pointer and free memory
 	 if (strcmp(confirm, "yes") == 0) {
 	   delete database[i];
 	   database.erase(database.begin() + i);

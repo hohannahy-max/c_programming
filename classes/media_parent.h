@@ -6,6 +6,7 @@
 
 using namespace std;
 
+//parent class for media
 class Media{
 
 protected:
@@ -14,11 +15,11 @@ protected:
 public:
   Media(const char* newTitle, int newYear);
 
-  virtual ~Media();
-
+  virtual ~Media();//destructor
+  //reutrn title and year
   char* getTitle();
   int getYear();
-
+  //return type of media
   virtual int getType();
 
 };

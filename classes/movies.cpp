@@ -11,10 +11,13 @@ movies::movies(const char* newTitle, const char* newDirector, int newYear, int n
   duration = newDuration;
 }
 
+//destructor
 movies:: ~movies(){
 
   delete[] director;
 }
+
+//return rating, director, duration, and type
 float movies::getRating( ){
   return rating;
   }
@@ -22,7 +25,7 @@ char* movies::getDirector(){
   return director;
   }
 
-int movies::getDuration(){
+ int movies::getDuration(){
   return duration;
 
 }

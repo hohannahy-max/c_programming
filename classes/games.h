@@ -5,7 +5,7 @@
 
 #include <iostream>
 #include <cstring>
-#include "media_parent.h"
+#include "media_parent.h"//inherits from media parent
 
 using namespace std;
 
@@ -17,13 +17,15 @@ private:
   float rating;
 
 public:
-  games(const char* newTitle, int newYear, const char* newPublisher, float newRating);
-  ~games() override;
+  
+  games(const char* newTitle, int newYear, const char* newPublisher, float newRating);//initializes game's traits
+  
+  ~games() override; //destructor
 
   char* getPublisher();
   float getRating();
 
-  int getType() override;
+  int getType() override;//returns type identifier (1)
 };
 
 #endif
