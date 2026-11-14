@@ -27,7 +27,3 @@ int Media:: getYear(){
 int Media::getType(){
   return 0;
 }
-
-void Media::print(){
-  cout << "Title: " << title << "Year: " << year << endl;
-}

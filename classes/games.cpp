@@ -24,11 +24,5 @@ int games::getType() {
   return 1; //video games number
 }
 
-void games::print(){
-  cout << "Title: " << title << endl;
-  cout << "Year: " << year << endl;
-  cout << "Publisher: " << publisher << endl;
-  cout << "Rating: " << rating << "/10" << endl;
 
-}
 

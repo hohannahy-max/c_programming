@@ -30,12 +30,4 @@ int movies::getType() {
   return 3; //movies number
 }
 
-void movies::print(){
-  cout << "Title" << title << endl;
-  cout << "Year" << year << endl;
-  cout << "Duration" << duration << endl;
-  cout << "Director" << director << endl;
-  cout << "Rating" << rating << endl;
-
-}
 

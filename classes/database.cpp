@@ -177,13 +177,13 @@ char director[100];
  void search(const vector<Media*>& database){
    char keyword[30];
    cout << "Search by  year or title???" << endl;
-   cin.getline(keyword, 100);
+   cin.getline(keyword, 30);
    bool found = false;
 
    if (strcmp(keyword, "title")== 0){
      char searchTitle[100];
      cout << "Enter title to search" << endl;
-     cin.getline(searchTitle, 30);
+     cin.getline(searchTitle, 100);
      
      for (Media* item : database){
        if (strcmp(item->getTitle(), searchTitle) == 0){
@@ -224,6 +224,7 @@ char director[100];
 
    cout << "Delete by year or title?" << endl;
    cin >> keyword;
+   cin.ignore(1000, '\n');
      if (strcmp(keyword, "title")== 0){
        cout << "Enter title to delete: " << endl;
        cin.getline(searchTitle,100);
@@ -232,6 +233,7 @@ char director[100];
      else if (strcmp(keyword, "year")== 0){
        cout << "Enter year to delete: " << endl;
        cin >> searchYear;
+       cin.ignore(1000, '\n');
          }
      else {
 

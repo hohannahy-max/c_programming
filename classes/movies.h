@@ -20,7 +20,6 @@ private:
   float getRating();
 
   int getType() override;
-  void print() override;
 
 };
 

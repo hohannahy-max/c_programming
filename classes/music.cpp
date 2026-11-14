@@ -31,11 +31,3 @@ int music::getDuration(){
 int music::getType() {
   return 2; //music number
 }
-
-void music::print(){
-  cout << "Title" << title << endl;
-  cout << "Year" << year << endl;
-  cout << "Publisher" << publisher << endl;
-  cout << "Artist" << artist<< endl;
-  cout << "Duration" << duration << endl;
-}

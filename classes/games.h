@@ -24,7 +24,6 @@ public:
   float getRating();
 
   int getType() override;
-  void print() override;
 };
 
 #endif

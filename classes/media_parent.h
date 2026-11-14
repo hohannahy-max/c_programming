@@ -20,9 +20,6 @@ public:
   int getYear();
 
   virtual int getType();
-  virtual void print();
-
-  
 
 };
 

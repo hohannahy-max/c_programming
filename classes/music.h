@@ -22,6 +22,5 @@ private:
   char* getPublisher();
 
   int getType() override;
-  void print() override;
 };
 #endif
