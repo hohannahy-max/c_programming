@@ -4,7 +4,7 @@
 using namespace std;
 
 
-movies::movies(const char* newTitle, const char* newArtist, int newYear, int newDuration, const char* newPublisher) : Media(newTitle, newYear){
+music::music(const char* newTitle, const char* newArtist, int newYear, int newDuration, const char* newPublisher) : Media(newTitle, newYear){
   artist = new char[strlen(newArtist) + 1];
   strcpy(artist, newArtist);
     publisher = new char[strlen(newPublisher) + 1];
@@ -32,7 +32,7 @@ int music::getType() {
   return 2; //music number
 }
 
-void games::print(){
+void music::print(){
   cout << "Title" << title << endl;
   cout << "Year" << year << endl;
   cout << "Publisher" << publisher << endl;

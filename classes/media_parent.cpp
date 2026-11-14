@@ -1,29 +1,33 @@
 #include <iostream>
 #include <cstring>
-#include "Media.h"
+#include "media_parent.h"
 using namespace std;
 
 
 //title, year
-class Media::Media(){
+class Media::Media(const char* newTitle, int newYear){
+  title = new char[strlen(newTitle) + 1];
+  strcppy(title, newTitle);
+  year = newYear;
 
+}
+Media::~Media(){
+  delete[] title;
+}
+
+char* Media::getTitle(){
+  return title;
 
 }
 
-char setTitle(char type, char title){
-
+int Media:: getYear(){
+  return year;
 }
 
-char setYear(char type[20], int year){
-
-   cout << "What's the title" << endl;
-
+int Media::getType(){
+  return 0;
 }
 
-void getTitle(){
-  database
-}
-
-void getYear(){
-  cout << "What year was it released?" << endl;
+void Media::print(){
+  cout << "Title: " << title << "Year: " << year << endl;
 }

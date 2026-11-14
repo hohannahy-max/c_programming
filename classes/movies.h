@@ -13,8 +13,8 @@ private:
   int duration;
   float rating;
  public:
-  Movie(const char* newTitle, const char* newDirector, int newYear, int newDuration, float newRating);
-  ~music() override;
+  movies(const char* newTitle, const char* newDirector, int newYear, int newDuration, float newRating);
+  ~movies() override;
   char* getDirector();
   int getDuration();
   float getRating();

@@ -1,6 +1,10 @@
+/*
+Name: Hannah Ho
+Date: 11/13/26
+Project: Classes
 
-//THIS IS THE MAIN cpp
 
+ */
 #include <iostream>
 #include <cstring>
 #include <vector>
@@ -20,33 +24,29 @@ void print(Media* item)
 int main()
 {
 
-  vector<Media*>& database;
+  vector<Media*> database;
   char choice[20];
   bool running = true;
+  
   while (running){
 
 
     cout << "Add media, search for media, delete an item, or quit (add, search, delete, quit)?" << endl;
-    cin.width(7);
-    cin >> choice;
+    cin.getline(choice,20);
 
-    if (strcmp(choice,"add") == 0)){
+    if (strcmp(choice,"add") == 0){
        add(database);
      }
-     else if (strcmp(choice, "search") == 0)){
+     else if (strcmp(choice, "search") == 0){
        search(database);
 
        }
-     else if (strcmp(choice, "delete") == 0{
+     else if (strcmp(choice, "delete") == 0){
 	 del(database);
 
-	 }
-
-       else if (strcmp(choice, "quit")) == 0{
+	 } else if (strcmp(choice, "quit") == 0){
 	   running = false;
-
-	   }
-       else{
+	   } else{
 	 cout << "Try again"
        }
 
@@ -149,7 +149,7 @@ char director[100];
 	 cout << "Game rating: " << g-> getRating() << "/10" << endl;
 
        }else if (item -> getType() ==2) {
-	 Music* m = static_cast<Music*>(item);
+	 music* m = static_cast<music*>(item);
 	 cout << "Music title: " << m->getTitle()<< endl;
 	 cout << "Music release year: " << m->getYear()<< endl;
 	 cout << "Music artist: " << m->getArtist()<< endl;
@@ -158,7 +158,7 @@ char director[100];
 
        }
        else if (item -> getType() ==3) {
-	 Movie* mo = static_cast<Movie*>(item);
+	 Movie* mo = static_cast<movies*>(item);
 	 cout << "Movie title: " << mo->getTitle()<< endl;
 	 cout << "Game release year: " << mo->getYear()<< endl;
 	 cout << "Game duration: " << mo-> getDuration() << "min" << endl;
@@ -235,6 +235,38 @@ char director[100];
      }
      bool found = false;
 
+     for (int i = static_cast<int>(database.size()) - 1; i >=0; i--){
+
+       bool match = false;
+       if (strcmp(keyword, "title") == 0 && strcmp(database[i]->getTitle(), searchTitle) == 0){
+	 match = true;
+       }
+       else if(strcmp(keyword, "year") == 0 && strcmp(database[i]->getYear(), searchYear) == 0){
+	 match = true;
+       }
+
+       
+       if (match) {
+	 found = true;
+	 cout << "Found match: ";
+	 database[i]->print();
+
+	 char confirm[10];
+	 cout << "Do you want to delete this item? (yes/no)" << endl;
+	 cin.getline(confirm,10);
+
+	 if (strcmp(confirm, "yes") -- 0) {
+	   delete database[i];
+	   database.erase(database.begin() + i);
+	   cout << "Item deleted." << endl;
+	 } else{
+	   cout << "Item kept" << endl;
+	 }
+
        
          }
      
+       if (!found){
+	 cout<< "NO match found" << endl;
+
+       }

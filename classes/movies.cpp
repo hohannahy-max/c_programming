@@ -26,11 +26,11 @@ int movies::getDuration(){
   return rating;
 
 }
-int games::getType() {
+int movies::getType() {
   return 3; //movies number
 }
 
-void games::print(){
+void movies::print(){
   cout << "Title" << title << endl;
   cout << "Year" << year << endl;
   cout << "Duration" << duration << endl;

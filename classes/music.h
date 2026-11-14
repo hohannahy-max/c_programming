@@ -14,7 +14,7 @@ private:
   char* publisher;
   
  public:
-  Music(const char* newTitle, const char* newArtist, int newYear, int newDuration, const char* newPublisher);
+  music(const char* newTitle, const char* newArtist, int newYear, int newDuration, const char* newPublisher);
   ~music() override;
 
   char* getArtist();
