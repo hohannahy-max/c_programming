@@ -20,8 +20,10 @@ void print(Media* item)
 int main()
 {
 
-  vector<Media*>& database;  
-  while (run == true){
+  vector<Media*>& database;
+  char choice[20];
+  bool running = true;
+  while (running){
 
 
     cout << "Add media, search for media, delete an item, or quit (add, search, delete, quit)?" << endl;
@@ -51,10 +53,9 @@ int main()
 
        for (size_t i = 0; i < database.size(); i++){
 	 delete database[i];
-	 database.clear();
 
        }
-       
+       database.clear();
 
        return 0;
 
@@ -62,25 +63,118 @@ int main()
 
 
     void add(vector<Media*>& database){
-Database* newmed = new media
   char type[7];
  cout << "What kind of media? (games, music or movies)" << endl;
- cin >> type;
+ cin.getline(type, 20);
+ char title[100];
+ int year;
 
-     void search(vector<Media*>& database){
+ if (strcmp(type, "GAME") == 0){
+   char publisher[100];
+   float rating;
 
-       char keyword[30];
-       cout << "Search by  year or title???"
-	 cin >> search_term;
-	 for (int i; i <= database_size; i++){
-	   if (strcmp(search_term, title)== 0){
-	   cout << database -> getYear();
-	 }
-	   if (strcmp(search_term, title)== 0){
-	     cout << database -> getTitle();
-	 }
-	 }
+   cout << "Enter title: " << endl;
+   cin.getline(title, 100);
+   cout << "Enter release date: " << endl;
+   cin >> year;
+   cout << "Enter publisher: " << endl;
+   cin.geline(publisher, 100);
+   cout << "Enter rating out of ten: " << endl;
+   cin >> rating;
+
+   database.push_back(new games(title, year, publisher, rating));
+   cout << "added" << endl;
+ }
+ else if (strcmp(type, "MUSIC") == 0){
+   int duration;
+char publisher[100];
+ char artist[100];
+
+   cout << "Enter title: " << endl;
+   cin.getline(title, 100);
+   cout << "Enter release date: " << endl;
+   cin >> year;
+   cout << "Enter publisher: " << endl;
+   cin.geline(publisher, 100);
+    cout << "Enter artist: " << endl;
+   cin.geline(artist, 100);
+   cout << "Enter duration in seconds: " << endl;
+   cin >> duration;
+
+   database.push_back(new games(title, year, publisher, artist, duration));
+   cout << "added" << endl;
+
+ }
+ else if (strcmp(type, "MOVIE") == 0){
+
+ int duration;
+char director[100];
+ float rating;
+
+   cout << "Enter title: " << endl;
+   cin.getline(title, 100);
+   cout << "Enter release date: " << endl;
+   cin >> year;
+   cout << "Enter director: " << endl;
+   cin.geline(director, 100);
+   cout << "Enter duration in minutes" << endl;
+   cin >> duration;
+   cout << "Enter rating out of 10: " << endl;
+   cin >> rating;
+
+   database.push_back(new movies(title, year, director, rating, duration));
+   cout << "added" << endl;
+
+ }
+ else{
+   cout < "try again" << endl;
+
+ }
+ if (!found) {
+   cout << "No matches" << endl;
+ }
+    }
+
+
+ void search(const vector<Media*>& database){
+   char keyword[30];
+   cout << "Search by  year or title???" << endl;
+   cin.getline(keyword, 100);
+   bool found = false;
+
+   if (strcmp(search_term, title)== 0){
+     char searchTitle[100];
+     cout << "Enter title to search" << endl;
+     cin.getline(searchTitle, 100);
+     
+     for (Media* item : database){
+       if (strcmp(item->getTitle(), searchTitle) == 0){
+       item->print();
+       found =true;
      }
+	 }
+ }
+ else if (strcmp(search_term, year)== 0){
+     char searchYear[100];
+     cout << "Enter title to search" << endl;
+     cin.getline(searchYear, 100);
+     
+     for (Media* item : database){
+       if(item->getYear() == searchYear){
+       item->print();
+       found =true;
+     }
+     }
+
+   }
+   
+   else{
+     cout << "try again" << endl;
+   }
+
+
+     }
+
 
      void del(vector<Media*>& database){
        char find[40];
