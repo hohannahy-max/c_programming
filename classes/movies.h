@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class movies : public media_parent{
+class movies : public Media{
 
 
 private:
@@ -20,7 +20,7 @@ private:
   float getRating();
 
   int getType() override;
-  int print() override;
+  void print() override;
 
 };
 

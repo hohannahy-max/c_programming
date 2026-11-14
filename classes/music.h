@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class music : public media_parent{
+class music : public Media{
 
 
 private:
@@ -22,6 +22,6 @@ private:
   char* getPublisher();
 
   int getType() override;
-  int print() override;
+  void print() override;
 };
 #endif

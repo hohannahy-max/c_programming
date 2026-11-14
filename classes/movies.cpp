@@ -11,9 +11,9 @@ movies::movies(const char* newTitle, const char* newDirector, int newYear, int n
   duration = newDuration;
 }
 
-movies:: ~moves(){
+movies:: ~movies(){
 
-  delete director[];
+  delete[] director;
 }
 float movies::getRating( ){
   return rating;
@@ -23,7 +23,7 @@ char* movies::getDirector(){
   }
 
 int movies::getDuration(){
-  return rating;
+  return duration;
 
 }
 int movies::getType() {

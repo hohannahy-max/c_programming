@@ -5,9 +5,9 @@ using namespace std;
 
 
 //title, year
-class Media::Media(const char* newTitle, int newYear){
+Media::Media(const char* newTitle, int newYear){
   title = new char[strlen(newTitle) + 1];
-  strcppy(title, newTitle);
+  strcpy(title, newTitle);
   year = newYear;
 
 }

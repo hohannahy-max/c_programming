@@ -9,7 +9,7 @@
 
 using namespace std;
 
-class games : public media_parent{
+class games : public Media{
 
 private:
   
@@ -24,7 +24,7 @@ public:
   float getRating();
 
   int getType() override;
-  int print() override;
+  void print() override;
 };
 
 #endif

@@ -8,24 +8,24 @@ music::music(const char* newTitle, const char* newArtist, int newYear, int newDu
   artist = new char[strlen(newArtist) + 1];
   strcpy(artist, newArtist);
     publisher = new char[strlen(newPublisher) + 1];
-  strcoy(publisher, newPublisher);
+  strcpy(publisher, newPublisher);
   duration = newDuration;
 }
 
 music:: ~music(){
 
-  delete publisher[];
-  delete artist[];
+  delete[] publisher;
+  delete[] artist;
 }
 char* music::getArtist( ){
-  return rating;
+  return artist;
   }
 char* music::getPublisher(){
-  return director;
+  return publisher;
   }
 
 int music::getDuration(){
-  return rating;
+  return duration;
 
 }
 int music::getType() {
@@ -37,5 +37,5 @@ void music::print(){
   cout << "Year" << year << endl;
   cout << "Publisher" << publisher << endl;
   cout << "Artist" << artist<< endl;
-  ccot << "Duration" << duration << endl;
+  cout << "Duration" << duration << endl;
 }

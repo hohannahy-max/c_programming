@@ -12,7 +12,7 @@ games:: games(const char* newTitle, int newYear, const char* newPublisher, float
 
 games:: ~games(){
 
-  delete publisher[];
+  delete[] publisher;
 }
 float games::getRating( ){
   return rating;
