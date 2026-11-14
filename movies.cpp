@@ -13,7 +13,7 @@ movies::movies(const char* newTitle, const char* newDirector, int newYear, int n
 
 movies:: ~moves(){
 
-  delete publisher[];
+  delete director[];
 }
 float movies::getRating( ){
   return rating;
