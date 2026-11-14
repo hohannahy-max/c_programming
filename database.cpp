@@ -30,10 +30,10 @@ int main()
     cin.width(7);
     cin >> choice;
 
-     if (strcmp(choice,"add") == 0){
+    if (strcmp(choice,"add") == 0)){
        add(database);
      }
-     else if (strcmp(choice, "search") == 0){
+     else if (strcmp(choice, "search") == 0)){
        search(database);
 
        }
@@ -50,9 +50,11 @@ int main()
 	 cout << "Try again"
        }
 
+       }
 
-       for (size_t i = 0; i < database.size(); i++){
-	 delete database[i];
+
+       for (Media* item : database){
+	 delete item;
 
        }
        database.clear();
@@ -60,12 +62,13 @@ int main()
        return 0;
 
      }
+    
 
 
-    void add(vector<Media*>& database){
+void add(vector<Media*>& database){
   char type[7];
- cout << "What kind of media? (games, music or movies)" << endl;
- cin.getline(type, 20);
+  cout << "What kind of media? (games, music or movies)" << endl;
+  cin.getline(type, 20);
  char title[100];
  int year;
 
@@ -127,13 +130,41 @@ char director[100];
 
  }
  else{
-   cout < "try again" << endl;
+   cout << "try again" << endl;
+ }
+}
 
- }
- if (!found) {
-   cout << "No matches" << endl;
- }
-    }
+
+
+
+
+
+     void print(Media* item){
+
+       if (item -> getType() ==1) {
+	 games* g = static_cast<games*>(item);
+	 cout << "Game title: " << g->getTitle()<< endl;
+	 cout << "Game release year: " << g->getYear()<< endl;
+	 cout << "Game publisher: " << g->getPublisher()<< endl;
+	 cout << "Game rating: " << g-> getRating() << "/10" << endl;
+
+       }else if (item -> getType() ==2) {
+	 Music* m = static_cast<Music*>(item);
+	 cout << "Music title: " << m->getTitle()<< endl;
+	 cout << "Music release year: " << m->getYear()<< endl;
+	 cout << "Music artist: " << m->getArtist()<< endl;
+	 cout << "Music duration: " << m-> getDuration() << "s" << endl;
+	 cout << "Music publisher: " << m-> getPublisher() << endl;
+
+       }
+       else if (item -> getType() ==3) {
+	 Movie* mo = static_cast<Movie*>(item);
+	 cout << "Movie title: " << mo->getTitle()<< endl;
+	 cout << "Game release year: " << mo->getYear()<< endl;
+	 cout << "Game duration: " << mo-> getDuration() << "min" << endl;
+	 cout << "Game rating: " << mo-> getRating() <<"/10" << endl;
+
+     }
 
 
  void search(const vector<Media*>& database){
@@ -152,8 +183,8 @@ char director[100];
        item->print();
        found =true;
      }
-	 }
- }
+     }
+   }
  else if (strcmp(search_term, year)== 0){
      char searchYear[100];
      cout << "Enter title to search" << endl;
@@ -161,7 +192,7 @@ char director[100];
      
      for (Media* item : database){
        if(item->getYear() == searchYear){
-       item->print();
+	 print(item);
        found =true;
      }
      }
@@ -170,38 +201,40 @@ char director[100];
    
    else{
      cout << "try again" << endl;
+     return;
    }
+    if (!found) {
+   cout << "No matches" << endl;
+ }
+
 
 
      }
 
 
-     void del(vector<Media*>& database){
-       char find[40];
-       cout << "Type in year or title to delete media" << endl;
-   cin >> search_term;
-         for (int i; i <= database_size; i++){
-           if (strcmp(search_term, title)== 0){
-           cout << database -> getYear();
+ void del(vector<Media*>& database){
+   char keyword[40];
+   searchTitle[100];
+   int searchYear;
+
+   cout << "Delete by year or title?" << endl;
+   cin >> keyword;
+     if (strcmp(keyword, "title")== 0){
+       cout << "Enter title to delete: " << endl;
+       cin.getline(searchTitle,100);
 	   ~
          }
-           if (strcmp(search_term, title)== 0){
-             cout << database -> getTitle();
-	     ~
+     else if (strcmp(keyword, "year")== 0){
+       cout << "Enter year to delete: " << endl;
+       cin >> searchYear;
          }
-         }
+     else {
 
-    
-
-     void quit(){
-       running = false;
+       cout << "Try again" << endl;
+       return;
      }
-	 
-	 //before closing out prevent memory leak :D
-     for (size_t i = 0; i < list.size(); i++){
-       delete databse[i];
+     bool found = false;
+
        
-     }
-     database.clear();
-     
+         }
      

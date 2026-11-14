@@ -15,6 +15,7 @@ movies::movies(const char* newTitle, const char* newArtist, int newYear, int new
 music:: ~music(){
 
   delete publisher[];
+  delete artist[];
 }
 char* music::getArtist( ){
   return rating;

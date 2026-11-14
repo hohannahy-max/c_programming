@@ -1,10 +1,7 @@
-/*
-Name: Hannah Ho
-Project: Classes
-Date: 11/8/26
 
- */
 
+#ifndef GAMES_H
+#define GAMES_H
 
 #include <iostream>
 #include <cstring>
@@ -21,6 +18,7 @@ private:
 
 public:
   games(const char* newTitle, int newYear, const char* newPublisher, float newRating);
+  ~games() override;
 
   char* getPublisher();
   float getRating();
@@ -29,6 +27,7 @@ public:
   int print() override;
 };
 
+#endif
 
 
 

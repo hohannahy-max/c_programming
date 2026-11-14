@@ -1,5 +1,6 @@
-#include <iostream>
-#include <cstring>
+#ifndef MOVIES_H
+#define MOVIES_H
+
 #include "media_parent.h"
 
 using namespace std;
@@ -13,7 +14,7 @@ private:
   float rating;
  public:
   Movie(const char* newTitle, const char* newDirector, int newYear, int newDuration, float newRating);
-
+  ~music() override;
   char* getDirector();
   int getDuration();
   float getRating();
@@ -22,3 +23,5 @@ private:
   int print() override;
 
 };
+
+#endif

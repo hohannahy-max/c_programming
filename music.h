@@ -1,3 +1,6 @@
+#ifndef MUSIC_H
+#define MUSIC_H
+
 #include "media_parent.h"
 
 using namespace std;
@@ -12,6 +15,7 @@ private:
   
  public:
   Music(const char* newTitle, const char* newArtist, int newYear, int newDuration, const char* newPublisher);
+  ~music() override;
 
   char* getArtist();
   int getDuration();
@@ -20,3 +24,4 @@ private:
   int getType() override;
   int print() override;
 };
+#endif
